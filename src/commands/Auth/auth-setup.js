@@ -13,14 +13,13 @@ let chosenEmojiOptions = {
 let final = finalOptions[Math.floor(Math.random() * finalOptions.length)];
 let chosenEmoji = chosenEmojiOptions[final];
 
+
 const changeEmojiOrder = () => {
   finalOptions = shuffle(finalOptions);
   final = finalOptions[Math.floor(Math.random() * finalOptions.length)];
   chosenEmoji = chosenEmojiOptions[final];
   
 };
-
-const timestamp = Math.floor(Date.now() / 1000);
 
 const updateMessage = (message, row) => {
   const embed = new EmbedBuilder()
@@ -40,6 +39,9 @@ module.exports = {
   getFinal: function() {
     return final;
   },
+  resetTimestamp() {
+    timestamp = Math.floor(Date.now() / 1000);
+  },
   final: final,
   data: new SlashCommandBuilder()
     .setName('auth-setup')
@@ -57,26 +59,49 @@ module.exports = {
       .setRequired(true)
     ),
 
-    async execute(interaction) {
-      if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) {
-        const errorEmbed = new EmbedBuilder()
-          .setTitle('🔒 Authentification Échouée')
-          .setDescription('> ❌  La permission `GERER_LES_SALONS` est requise pour configurer et activer l\'authentification à emojis.')
-          .setTimestamp()
-          .setFooter({
-            text: interaction.user.tag,
-            iconURL: interaction.user.displayAvatarURL({ dynamic: true }),
-          })
-          .setColor('#da4744');
-        
-        return await interaction.reply({
-          embeds: [errorEmbed],
-          ephemeral: true
-        });
-      }
+  async execute(interaction, client) {
+    const guildMember = await interaction.guild.members.fetch(client.user.id);
+    const botMember = guildMember;
+    const authronRole = guildMember.roles.cache.find(role => role.name === 'Authron');
+    if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) {
+      const errorEmbed = new EmbedBuilder()
+        .setTitle('🔒 Authentification Échouée')
+        .setDescription('> ❌  La permission `GERER_LES_SALONS` est requise pour configurer et activer l\'authentification à emojis.')
+        .setTimestamp()
+        .setFooter({
+          text: interaction.user.tag,
+          iconURL: interaction.user.displayAvatarURL({ dynamic: true }),
+        })
+        .setColor('#da4744');
+      
+      return await interaction.reply({
+        embeds: [errorEmbed],
+        ephemeral: true
+      });
+    }
 
     const channel = interaction.options.getChannel('salon');
     const role = interaction.options.getRole('role');
+
+    await interaction.guild.roles.fetch();
+
+    if (role.position >= botMember.roles.highest.position || role.name === '@everyone' || role.managed) {
+      const errorEmbed = new EmbedBuilder()
+        .setTitle('🔒 Authentification Échouée')
+        .setDescription('> ❌ Le rôle sélectionné est invalide ou au-dessus de Authron ou de votre rôle.')
+        .setTimestamp()
+        .setFooter({
+          text: interaction.user.tag,
+          iconURL: interaction.user.displayAvatarURL({ dynamic: true }),
+        })
+        .setColor('#da4744');
+
+      await interaction.reply({
+        embeds: [errorEmbed],
+        ephemeral: true
+      });
+      return;
+    }
 
     authSchema.findOne({ Guild: interaction.guild.id }, async (err, data) => {
       if (!data) {
@@ -132,11 +157,11 @@ module.exports = {
         .addComponents(...buttons);
 
       const embed = new EmbedBuilder()
-      .setTitle('🔒 Authentification')
-      .setDescription(`Bienvenue ! Veuillez sélectionner le **visage ${chosenEmoji}** pour prouver que vous êtes un humain.`)
-      .addFields({ name: `🤔  Pourquoi ?`, value: `Ce captcha est mis en place pour distinguer les utilisateurs humains des programmes automatisés et assurer la sécurité du serveur.`, inline: true })
-      .setTimestamp()
-      .setColor('#0099ff');
+        .setTitle('🔒 Authentification')
+        .setDescription(`Bienvenue ! Veuillez sélectionner le **visage ${chosenEmoji}** pour prouver que vous êtes un humain.`)
+        .addFields({ name: `🤔  Pourquoi ?`, value: `Ce captcha est mis en place pour distinguer les utilisateurs humains des programmes automatisés et assurer la sécurité du serveur.`, inline: true })
+        .setTimestamp()
+        .setColor('#0099ff');
 
       const message = await channel.send({
         embeds: [embed],
@@ -146,14 +171,17 @@ module.exports = {
       setInterval(changeEmojiOrder, 60 * 1000);
       setInterval(() => updateMessage(message, row), 60 * 1000);
 
+      const timestamp = Math.floor(Date.now() / 1000);
+
+
       const successEmbed = new EmbedBuilder()
         .setTitle('🔒 Authentification Réussie')
         .setDescription('> ✅  L\'authentification à emojis a été configurée et activée avec succès !')
         .addFields(
-        { name: `⚙️ Activée`, value: `<t:${timestamp}:R>`, inline: false},
-        { name: `🎭 Rôle de vérification`, value: `${role}`, inline: false},
-        { name: `#️⃣ Salon de vérification`, value: `${channel}`, inline: false}
-      )
+          { name: `⚙️ Activée`, value: `<t:${timestamp}:R>`, inline: false},
+          { name: `🎭 Rôle de vérification`, value: `${role}`, inline: false},
+          { name: `#️⃣ Salon de vérification`, value: `${channel}`, inline: false}
+        )
         .setTimestamp()
         .setFooter({
           text: interaction.user.tag,
