@@ -42,8 +42,6 @@ Une fois l'authentification à émojis mise en place (`/auth-setup`), Authron en
 
 L'émoji à sélectionner change toutes les minutes.
 
-Authron a besoin d'être au-dessus du rôle définit par l'utilisateur dans la commande `/auth-setup`, autrement, il s'arrêtera (en attente d'un fix de ma part).
-
 Si l'utilisateur qui échoue deux fois est supérieur à Authron, il s'arrêtera car il ne pourra pas l'expulser (en attente d'un fix de ma part).
 
 # Images
