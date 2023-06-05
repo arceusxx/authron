@@ -31,4 +31,9 @@ Si l'utilisateur qui échoue deux fois est supérieur à Authron, il s'arrêtera
 - Ajouter une option 'sanction' dans la commande `/auth-setup` qui permettrait de choisir une sanction à appliquer aux utilisateurs qui échouent deux fois (ban, kick, ou aucune)
 - Ajouter une option 'logs' dans la commande `/auth-setup` qui permettrait d'envoyer les logs dans un salon spécifique.
 
+# Images
+
 ![image](https://github.com/arceusxx/authron/assets/96443442/64348348-856c-45c8-95e3-d0ea9e99862a)
+![image](https://github.com/arceusxx/authron/assets/96443442/2590b452-9a0f-4e80-ac33-6877f9f6eeb2)
+![image](https://github.com/arceusxx/authron/assets/96443442/935f4507-5186-4a36-ad5d-9ccb61c52ac1)
+
