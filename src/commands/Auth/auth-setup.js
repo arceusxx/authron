@@ -39,9 +39,6 @@ module.exports = {
   getFinal: function() {
     return final;
   },
-  resetTimestamp() {
-    timestamp = Math.floor(Date.now() / 1000);
-  },
   final: final,
   data: new SlashCommandBuilder()
     .setName('auth-setup')
