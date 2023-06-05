@@ -3,7 +3,7 @@ Authron est un bot Discord qui met en place une authentification à émojis.
 Authron se base sur le code de [Razlar](https://www.youtube.com/@razlar2080), l'idée a été reprise, j'y ai ajouté des fonctionnalités et j'ai amélioré le code.
 
 # Ce que j'ai ajouté
-- Changement de l'émoji toutes les minutes <= toute la logique pour savoir si l'émoji est le bon etc.
+- Changement de l'émoji toutes les minutes <= toute la logique pour savoir si l'émoji est le bon, changements etc.
 - Système d'expulsion au bout de deux tentatives échouées.
 - Plus d'embeds, de détails, d'émojis, de couleurs + timestamps, infos...
 - Vérification si aucune authentification existe.
