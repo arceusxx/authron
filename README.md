@@ -11,6 +11,7 @@ Authron se base sur le code de [Razlar](https://www.youtube.com/@razlar2080), l'
 - Une fois votre cluster connecté à un driver Mongo (driver : Node.js, version : 5.5 ou plus), installez le driver avec : `npm install mongodb`
 - Ajoutez votre chaîne de connexion dans le fichier `.env` après `MONGODBURL`.
 - Ajoutez le token de votre bot dans le fichier `.env` après `token`.
+- Ajoutez l'identifiant de votre bot et de votre serveur dans le fichier `index.js`.
 - Ouvrez la console, et exécuter `node .` à l'intérieur du répertoire.
 
 # Informations
