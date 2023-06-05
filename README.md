@@ -11,6 +11,7 @@ Authron se base sur le code de [Razlar](https://www.youtube.com/@razlar2080), l'
 - Traduction en français.
 
 # À faire
+- Optimiser et nettoyer le code pour le rendre plus clair.
 - Ajouter une vérification pour savoir si le rôle sélectionné par l'utilisateur dans `/auth-setup` n'est pas au-dessus de Authron / pas au-dessus de l'utilisateur.
 - Ajouter une vérification pour éviter de pouvoir définir le rôle @everyone ainsi que les rôles des BOTS dans `/auth-setup`, actuellement, si c'est le cas, Authron arrête de fonctionner.
 - Changer l'ordre des boutons pour plus de difficultés toutes les minutes.
@@ -31,7 +32,7 @@ Authron se base sur le code de [Razlar](https://www.youtube.com/@razlar2080), l'
 - Ouvrez la console, et exécuter `node .` à l'intérieur du répertoire.
 
 # Informations
-Le code n'est pas optimisé et n'est pas clair, c'est un petit projet que j'ai fait rapidement, alors il peut contenir des inexactitudes et des choses illogiques comme des variables jamais utilisées.
+Le code n'est pas optimisé et n'est pas clair, c'est un petit projet que j'ai fait rapidement, alors il peut contenir des inexactitudes et des choses illogiques comme des variables jamais utilisées etc.
 
 Une fois l'authentification à émojis mise en place (`/auth-setup`), Authron enverra un message dans le salon choisit par l'utilisateur avec la vérification.
 
