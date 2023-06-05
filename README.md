@@ -32,7 +32,7 @@ Authron se base sur le code de [Razlar](https://www.youtube.com/@razlar2080), l'
 - Ouvrez la console, et exécuter `node .` à l'intérieur du répertoire.
 
 # Informations
-Le code n'est pas optimisé et n'est pas clair, c'est un petit projet que j'ai fait rapidement, alors il peut contenir des inexactitudes et des choses illogiques comme des variables jamais utilisées etc.
+Le code n'est pas optimisé et n'est pas clair, c'est un petit projet que j'ai fait rapidement, alors il peut contenir des inexactitudes, des bugs et des choses illogiques comme des variables jamais utilisées etc.
 
 Une fois l'authentification à émojis mise en place (`/auth-setup`), Authron enverra un message dans le salon choisit par l'utilisateur avec la vérification.
 
