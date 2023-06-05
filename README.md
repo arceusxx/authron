@@ -9,6 +9,8 @@ Authron se base sur le code de [Razlar](https://www.youtube.com/@razlar2080) <= 
 - Plus d'embeds, de détails, d'émojis, de couleurs + timestamps, infos...
 - Vérification si aucune authentification existe.
 - Vérification si l'utilisateur est déjà vérifié.
+- Vérification pour savoir si le rôle sélectionné par l'utilisateur n'est pas au-dessus de Authron / pas au-dessus de l'utilisateur.
+- Vérification pour éviter de pouvoir définir le rôle @everyone ainsi que les rôles des BOTS.
 - Traduction en français.
 
 # À faire
