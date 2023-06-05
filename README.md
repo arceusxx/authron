@@ -14,6 +14,7 @@ Authron se base sur le code de [Razlar](https://www.youtube.com/@razlar2080), l'
 - Optimiser et nettoyer le code pour le rendre plus clair.
 - Ajouter une vérification pour savoir si le rôle sélectionné par l'utilisateur dans `/auth-setup` n'est pas au-dessus de Authron / pas au-dessus de l'utilisateur.
 - Ajouter une vérification pour éviter de pouvoir définir le rôle @everyone ainsi que les rôles des BOTS dans `/auth-setup`, actuellement, si c'est le cas, Authron arrête de fonctionner.
+- Ajouter une vérification pour savoir si l'utilisateur qui a échoué deux fois est supérieur à Authron, si c'est le cas, gérer la situation car Authron ne pourra pas l'expulser.
 - Changer l'ordre des boutons pour plus de difficultés toutes les minutes.
 - Ajouter une option 'sanction' dans la commande `/auth-setup` qui permettrait de choisir une sanction à appliquer aux utilisateurs qui échouent deux fois (ban, kick, ou aucune)
 - Ajouter une option 'logs' dans la commande `/auth-setup` qui permettrait d'envoyer les logs dans un salon spécifique.
@@ -38,9 +39,9 @@ Une fois l'authentification à émojis mise en place (`/auth-setup`), Authron en
 
 L'émoji à sélectionner change toutes les minutes.
 
-Authron a besoin d'être au-dessus du rôle définit par l'utilisateur dans la commande `/auth-setup`, autrement, il s'arrêtera.
+Authron a besoin d'être au-dessus du rôle définit par l'utilisateur dans la commande `/auth-setup`, autrement, il s'arrêtera (en attente d'un fix de ma part).
 
-Si l'utilisateur qui échoue deux fois est supérieur à Authron, il s'arrêtera car il ne pourra pas l'expulser.
+Si l'utilisateur qui échoue deux fois est supérieur à Authron, il s'arrêtera car il ne pourra pas l'expulser (en attente d'un fix de ma part).
 
 # Images
 
