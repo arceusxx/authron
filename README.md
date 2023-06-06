@@ -42,7 +42,7 @@ Une fois l'authentification à émojis mise en place (`/auth-setup`), Authron en
 
 L'émoji à sélectionner change toutes les minutes.
 
-Si l'utilisateur qui échoue deux fois est supérieur à Authron, il s'arrêtera car il ne pourra pas l'expulser (en attente d'un fix de ma part).
+Si l'utilisateur qui échoue deux fois est supérieur à Authron, il enverra une erreur dans le terminal car il ne pourra pas l'expulser (en attente d'un fix de ma part).
 
 # Images
 
