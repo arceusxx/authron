@@ -1,4 +1,7 @@
-const { model, Schema} = require ('mongoose');
+const {
+  model,
+  Schema
+} = require('mongoose');
 
 let authSchema = new Schema({
   Guild: String,
