@@ -36,7 +36,7 @@ Authron se base sur le code de [Razlar](https://www.youtube.com/@razlar2080) <= 
 - Ouvrez la console, et exécuter `node .` à l'intérieur du répertoire.
 
 # Informations
-Authron est fait pour être exécuté en local, et n'est pas fait pour être rendu public, par exemple, à chaque redémarrage, vous devez refaire la configuration pour l'authentification (en attente de stockage sur la base de données Mongo).
+Authron est fait pour être exécuté en local, et n'est pas fait pour être rendu public, par exemple, à chaque redémarrage, vous devez refaire la configuration pour l'authentification (en attente d'un fix).
 
 Le code n'est pas optimisé et n'est pas clair, c'est un petit projet que j'ai fait rapidement, alors il peut contenir des inexactitudes, des bugs et des choses illogiques comme des variables jamais utilisées etc.
 
