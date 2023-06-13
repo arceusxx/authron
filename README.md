@@ -24,7 +24,7 @@ Authron se base sur le code de [Razlar](https://www.youtube.com/@razlar2080) <= 
 
 
 # Installation
-- Nécessite discord.js v14, mongoose et shuffle de lodash : `npm i discord.js` & `npm i mongoose` & `npm i lodash`
+- Nécessite discord.js v14, mongoose, dotenv et shuffle de lodash : `npm i discord.js` & `npm i mongoose` & `npm i dotenv` & `npm i lodash`
 - Créer un BOT depuis le [portail des développeurs de Discord](https://discord.com/developers/applications).
 - Cocher les intents nécessaires : Intention des membres du serveur | Intention du contenu du message
 - Ajouter le bot sur votre serveur avec les scopes `bot` & `applications.commands`.
